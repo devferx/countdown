@@ -72,6 +72,66 @@ body {
   font: var(--countdown-unit);
 }
 
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 30px;
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  transform: translate(-50%, -50%);
+  animation: showModal 0.5s ease-in-out;
+}
+
+.modal.hide {
+  animation: hideModal 0.5s ease-in-out forwards;
+}
+
+@keyframes showModal {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes hideModal {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+.modal h3 {
+  font-size: 32px;
+}
+
+/* green button */
+.btn {
+  display: block;
+  padding: 16px 32px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  background: #0f56b3;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   .countdown-container {
     gap: 8px;
